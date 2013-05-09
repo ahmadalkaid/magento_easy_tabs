@@ -56,7 +56,7 @@
 </ul>
 <div class="padder">
     <?php foreach ($this->getTabs() as $_index => $_tab): ?>
-        <?php if($this->getChildHtml($_tab['alias'])): ?>
+        <?php if($this->getChildHtml($_tab['alias']) && strlen(strip_tags(trim($this->getChildHtml($_tab['alias']))))>0): ?>
             <div id="product_tabs_<?php echo $_tab['alias'] ?>_contents"><?php echo $this->getChildHtml($_tab['alias']); ?></div>
         <?php endif; ?>
     <?php endforeach; ?>
